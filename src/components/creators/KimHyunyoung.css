@@ -1,0 +1,102 @@
+.khy-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #dbf474;
+    position: relative;
+    overflow: hidden;
+    /* Prevent scroll if we want just One Screen, or auto if scrolling */
+}
+
+/* Full screen background image */
+.khy-bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+.khy-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+}
+
+/* Center Overlay Image */
+.khy-center-image {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vh;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.khy-center-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+
+
+/* Content layer */
+.khy-content {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 10;
+    max-width: 600px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.khy-title-group {
+    text-align: left;
+    margin-bottom: 2rem;
+    display: inline-block;
+    width: fit-content;
+}
+
+.khy-name-kr {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    color: #333333;
+}
+
+.khy-name-en {
+    font-size: 20px;
+    font-weight: 400;
+    opacity: 0.8;
+    color: #333333;
+}
+
+.khy-description-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    max-width: 600px;
+    /* Keep max-width for readability */
+    color: #333333;
+}
+
+@media (max-width: 768px) {
+    .khy-name-kr {
+        font-size: 1.5rem;
+    }
+
+    .khy-content {
+        padding: 80px 15px 20px;
+    }
+}

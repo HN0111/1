@@ -1,0 +1,72 @@
+/* ScrollIndicator.css */
+
+/* Reset for the link */
+.main__scroll {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.main__scroll-text {
+    color: #ffffff;
+    /* Changed to white for dark background */
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Scroll Box Style */
+.main__scroll-box {
+    width: 2rem;
+    height: 3.5rem;
+    border: 2px solid #ffffff;
+    /* White border */
+    border-radius: 1rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5rem;
+}
+
+/* The moving dot/wheel inside */
+.main__scroll-box::before {
+    content: '';
+    width: 0.4rem;
+    height: 0.4rem;
+    background-color: #ffffff;
+    border-radius: 50%;
+    animation: scroll-down 2s infinite;
+}
+
+/* Hover effect */
+.main__scroll:hover .main__scroll-text {
+    opacity: 0.8;
+}
+
+/* Animation */
+@keyframes scroll-down {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    30% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+
+    40% {
+        transform: translateY(-0.5rem);
+        /* Reset to top hidden */
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

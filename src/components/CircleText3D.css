@@ -1,0 +1,115 @@
+.circle__container {
+    background-color: #000;
+    color: #ff0000;
+    width: 100%;
+}
+
+.intro__section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.intro__title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(3rem, 8vw, 8rem);
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.1;
+    text-transform: capitalize;
+    /* Or uppercase based on preference, screenshot looks Title Case/Capitalized */
+}
+
+.intro__hint {
+    position: absolute;
+    bottom: 2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    /* White/Grey for 'Scroll down' */
+    opacity: 0.7;
+}
+
+.circle__wrapper {
+    width: 100%;
+    height: 100vh;
+    /* Changed from 100svh for better compatibility if needed, or keep svh */
+    height: 100svh;
+    position: relative;
+    overflow: hidden;
+    /* Added to prevent scrollbar from horizontal overflow */
+    /* background-color: #000; Inherited from container */
+}
+
+.circle__wrapper ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.circle__text__wrapper__left {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    left: 30%;
+    transform: translateX(-100%);
+    /* pointer-events: none; Optional: to let clicks pass through if needed */
+}
+
+.circle__text__wrapper__right {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    left: 70%;
+    text-align: right;
+}
+
+.circle__text__left__item,
+.circle__text__right__item {
+    position: absolute;
+    font-family: 'Inter', sans-serif;
+    /* Use project font */
+    font-weight: 400;
+    font-size: clamp(1.5rem, 5vw, 6rem);
+    text-transform: uppercase;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 25rem;
+    color: #ff0000;
+    /* Red text as per user preference */
+    white-space: nowrap;
+    /* Prevent wrapping */
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+
+    .circle__text__wrapper__left,
+    .circle__text__wrapper__right {
+        font-size: 1.2rem;
+    }
+
+    .circle__text__left__item,
+    .circle__text__right__item {
+        width: 15rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+    .circle__text__wrapper__left,
+    .circle__text__wrapper__right {
+        font-size: 1rem;
+    }
+
+    .circle__text__left__item,
+    .circle__text__right__item {
+        width: 10rem;
+    }
+}
